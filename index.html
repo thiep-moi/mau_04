@@ -211,7 +211,7 @@
             }
 
             100% {
-                opacity: 0.65;
+                opacity: 0.8;
                 transform: scale(1) rotate(0deg) translateX(0);
             }
         }
@@ -223,7 +223,7 @@
             }
 
             100% {
-                opacity: 0.65;
+                opacity: 0.8;
                 transform: scale(1) rotate(0deg) translateX(0);
             }
         }
@@ -2525,7 +2525,7 @@
             }
 
             100% {
-                opacity: 0.65;
+                opacity: 0.8;
                 transform: scale(1) rotate(0deg) translateX(0);
             }
         }
@@ -2537,7 +2537,7 @@
             }
 
             100% {
-                opacity: 0.65;
+                opacity: 0.8;
                 transform: scale(1) rotate(0deg) translateX(0);
             }
         }
@@ -2545,24 +2545,24 @@
         /* NHỊP 2: HÔ HẤP VÀ ĐUNG ĐƯA THEO GIÓ */
         @keyframes flowerBreatheLeft {
             0% {
-                opacity: 0.65;
+                opacity: 0.8;
                 transform: scale(1) rotate(0deg);
             }
 
             100% {
-                opacity: 0.75;
+                opacity: 0.9;
                 transform: scale(1.04) rotate(4deg);
             }
         }
 
         @keyframes flowerBreatheRight {
             0% {
-                opacity: 0.65;
+                opacity: 0.8;
                 transform: scale(1) rotate(0deg);
             }
 
             100% {
-                opacity: 0.75;
+                opacity: 0.9;
                 transform: scale(1.04) rotate(-4deg);
             }
         }
@@ -2682,6 +2682,20 @@
             touch-action: none !important;
             /* Chặn đứng mọi thao tác vuốt trượt trên Mobile */
         }
+
+        /* =========================================
+           BỘ LỌC SẮC TỐ 2% CHO HỆ SINH THÁI THỰC VẬT
+           ========================================= */
+        .intro-floral,
+        .luxury-flower {
+            /* 
+              - contrast(1.02): Tăng độ sắc nét của gân lá lên đúng 2%
+              - brightness(0.98): Dìm bớt 2% ánh sáng trắng của màn hình để màu rêu thẫm lại
+              - saturate(1.05): Bơm thêm 5% nhựa sống để hoa bớt nhợt nhạt
+              - drop-shadow: Tạo một lớp bóng đen mờ chỉ 0.05% để hoa nổi khối 3D trên nền giấy
+            */
+            filter: contrast(1.02) brightness(0.98) saturate(1.05) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+        }
     </style>
 </head>
 
@@ -2788,7 +2802,6 @@
 
             <!-- NHỊP 5: Hoa Bottom nằm phục kích ở đáy, cuộn tới mới nở! -->
             <img src="hoa_4.png" class="luxury-flower flower-left fl-moss-b sniper-target" alt="">
-            <img src="hoa_3.png" class="luxury-flower flower-right fl-moss-b sniper-target" alt="">
         </section>
 
         <div class="invitation-statement reveal-card-3d">
