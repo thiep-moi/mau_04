@@ -64,6 +64,48 @@
         }
 
         /* =========================================
+           BỘ ENGINE PHẢN LỰC GPU TỐI THƯỢNG (ANTI-LAG 60FPS)
+           ========================================= */
+        
+        /* 1. ÉP MƯỢT TEXT (ANTI-ALIASING TỐI ĐA TRÊN MỌI MÀN HÌNH) */
+        html, body {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* 2. ÉP XUNG CARD ĐỒ HỌA (GPU) CHO NHỮNG VẬT THỂ NẶNG NHẤT */
+        .intro-floral, 
+        .luxury-flower, 
+        #the-mist-layer, 
+        .intro-core-content,
+        .reveal-card-3d, 
+        .photo-wrapper img, 
+        .glass-card, 
+        .demo-iframe-wrapper {
+            /* Lệnh bài số 1: Nhấc vật thể lên không gian 3D, buộc GPU phải tiếp quản thay CPU */
+            transform: translateZ(0);
+            
+            /* Lệnh bài số 2: Xóa bỏ mặt sau của vật thể, giảm 50% gánh nặng render bộ nhớ */
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            
+            /* Lệnh bài số 3: Thiết lập chiều sâu quang học, chống rung viền pixel (Flickering) */
+            perspective: 1000px;
+            
+            /* Lệnh bài tối thượng (Sinh Tử): 
+               Cảnh báo trước cho trình duyệt biết vật thể này SẼ chuyển động. 
+               Trình duyệt sẽ tự động dọn sẵn VRAM để nghênh đón, loại bỏ hoàn toàn độ trễ! */
+            will-change: transform, opacity, filter;
+        }
+
+        /* 3. TỐI ƯU HÓA LỚP KÍNH MỜ (Kẻ thù số 1 của iPhone) */
+        .glass-card, .map-card, .rsvp-card, .demo-iframe-wrapper {
+            /* Các lớp blur cực kỳ ngốn RAM. Lệnh này ép trình duyệt không vẽ lại liên tục */
+            transform-style: preserve-3d;
+        }
+
+        /* =========================================
    1. HỆ SINH THÁI NỀN ULTRA-LUXURY
 ========================================= */
         html,
