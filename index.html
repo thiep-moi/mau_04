@@ -2733,7 +2733,9 @@
         body.scroll-locked {
             overflow: hidden !important;
             touch-action: none !important;
-            /* Chặn đứng mọi thao tác vuốt trượt trên Mobile */
+            /* LƯỠI DAO ÉP SAFARI IOS PHẢI NGOAN NGOÃN KHÓA CUỘN: Đóng đinh cơ thể vào màn hình */
+            position: fixed !important;
+            width: 100% !important;
         }
 
         /* =========================================
