@@ -2199,6 +2199,17 @@
             height: 100%;
             object-fit: cover;
             object-position: center;
+
+            /* 🔥 MA TRẬN ÉP ĐỘ NÉT BẰNG PHẦN CỨNG (GPU) */
+            image-rendering: -webkit-optimize-contrast;
+            /* Ép Safari/Chrome giữ độ gai góc, không làm nhòe ảnh */
+            image-rendering: high-quality;
+            /* Lệnh bài yêu cầu chất lượng render cao nhất */
+
+            /* 🔥 KÍCH HOẠT CHIP ĐỒ HỌA 3D (Ngăn chặn rung viền và nhòe pixel trên iPhone) */
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            perspective: 1000px;
         }
 
         /* Màng chắn quang học: Tăng độ tương phản để text nổi bật */
@@ -2826,21 +2837,23 @@
                 <div class="line-mask card-title"><span class="animate-text-up">Nhà Trai</span></div>
                 <div class="line-mask parent-role"><span class="animate-text-up stagger-1"
                         style="display: block;">Ông</span></div>
-                <div class="line-mask parent-name"><span class="animate-text-up stagger-1" style="display: block;">Bố Chú Rể</span></div>
+                <div class="line-mask parent-name"><span class="animate-text-up stagger-1" style="display: block;">Bố
+                        Chú Rể</span></div>
                 <div class="line-mask parent-role"><span class="animate-text-up stagger-2"
                         style="display: block;">Bà</span></div>
-                <div class="line-mask parent-name"><span class="animate-text-up stagger-2"
-                        style="display: block;">Mẹ Chú Rể</span></div>
+                <div class="line-mask parent-name"><span class="animate-text-up stagger-2" style="display: block;">Mẹ
+                        Chú Rể</span></div>
             </div>
             <div class="family-side from-right">
                 <div class="line-mask card-title"><span class="animate-text-up">Nhà Gái</span></div>
                 <div class="line-mask parent-role"><span class="animate-text-up stagger-1"
                         style="display: block;">Ông</span></div>
-                <div class="line-mask parent-name"><span class="animate-text-up stagger-1"
-                        style="display: block;">Bố Cô Dâu</span></div>
+                <div class="line-mask parent-name"><span class="animate-text-up stagger-1" style="display: block;">Bố Cô
+                        Dâu</span></div>
                 <div class="line-mask parent-role"><span class="animate-text-up stagger-2"
                         style="display: block;">Bà</span></div>
-                <div class="line-mask parent-name"><span class="animate-text-up stagger-2" style="display: block;">Mẹ Cô Dâu</span></div>
+                <div class="line-mask parent-name"><span class="animate-text-up stagger-2" style="display: block;">Mẹ Cô
+                        Dâu</span></div>
             </div>
         </div>
 
